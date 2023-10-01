@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-Page</title>
+    <style>
+        head, html, h1 {
+            padding: 0;
+            margin: 0;
+        }
+        h1, form {
+            margin-top: 5%;
+        }
+    </style>
+</head>
+<body>
+    <main style="text-align: center;">
+        <h1>Cadastro de usuario</h1>
+
+        <form action="{% url 'lista_de_usuarios' %}" method="post">
+            {% csrf_token %}
+            <p>Nome: <input name="nome" type="text" placeholder="Digite seu nome"></p>
+            <p>Idade: <input name="idade" type="number" placeholder="Digite sua idade"></p>
+            <button style="width: 150px;">Enviar</button>
+        </form>
+
+    </main>
+</body>
+</html>
